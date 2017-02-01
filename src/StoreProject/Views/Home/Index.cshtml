@@ -1,0 +1,259 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@*<div class="container">
+        <div class="gallery">
+            <div class="row">
+                <div class="col-lg-3">
+                        <a href="~/images/Flower1.jpg" data-title="my First photo" data-lightbox="vcation">
+                            <img src="~/images/Flower1.jpg" class="img-thumbnail" />
+                        </a>
+                </div>
+                <div class="col-lg-3">
+                        <a href="~/images/Flower2.jpg" data-title="my First photo" data-lightbox="vcation">
+                            <img src="~/images/rsz_1flower2.png" class="img-thumbnail" />
+                        </a>
+                   </div>
+                <div class="col-lg-3">
+                    <a href="~/images/flower3.jpg" data-title="my First photo" data-lightbox="vcation">
+                        <img src="~/images/rsz_flower3.png" class="img-thumbnail" />
+                    </a>
+                </div>
+
+                <div class="col-lg-3">
+                    <a href="~/images/Flower1.jpg" data-title="my First photo" data-lightbox="vcation">
+                        <img src="~/images/Flower1.jpg" class="img-thumbnail" />
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>*@
+@*<title>Video/Canvas Demo 1</title>
+    <div class="canvasbady">
+    <canvas id=canvas></canvas>
+        <video id=video controls loop>
+            <source src=video.webm type=video/webm>
+            <source src=video.ogg type=video/ogg>
+
+            <source src=video.mp4 type=video/mp4>
+        </video>
+
+    </div>*@
+
+@*<script src="~/js/canvas.js"></script>
+    <canvas id="Canvas" class="three _col" @*width="600" height="900" style="border:1px solid #c3c3c3;">
+        Your browser does not support the HTML5 canvas tag.
+
+
+
+
+    </canvas>*@
+<script type="text/javascript" src="~/js/canvasjs.min.js"></script>
+
+
+<!-- Sidebar -->
+<div class="form-group">
+    <div id="sidebar-wrapper">
+
+        <ul class="sidebar-nav">
+            <li class="sidebar-brand"></li>
+            @using (Html.BeginForm("Search", "Products", FormMethod.Get))
+            {
+                <li>
+                    <a href="#">
+                        Main Menu
+                    </a>
+                </li>
+                <li>
+                    <a>Price</a>
+                </li>
+                <li>
+                    <a>
+                        @Html.TextBox("Price", ViewBag.price as string)
+                    </a>
+                </li>
+                <li>
+                    <a>Category</a>
+                </li>
+                <li>
+                    <a>
+                        @Html.TextBox("Category", ViewBag.category as string)
+                    </a>
+                </li>
+                <li>
+                    <a>Supplier Name</a>
+                </li>
+                    <li>
+                        <a>  @Html.TextBox("Supplier", ViewBag.supplier as string) </a>
+                    </li>
+                    <li><input type="submit" value="search"></li>
+            }
+
+
+            @if (User.IsInRole("Admin"))
+            {
+                <li>
+                    <a asp-controller="Products" asp-action="Index">Products</a>
+                </li>
+                <li>
+                    <a asp-controller="Suppliers" asp-action="Index">Suppliers</a>
+                </li>
+                <li>
+                    <a asp-controller="Customers" asp-action="Index">Customers</a>
+                </li>
+                <li>
+                    <a asp-controller="Products" asp-action="InventoryCheck">Inventory</a>
+                </li>
+
+            @using (Html.BeginForm("SearchBySupplier", "Suppliers", FormMethod.Get))
+            {
+
+                <li>
+                    <a>
+                        Search Suppliers And Customers
+                    </a>
+                </li>
+                <li>
+                    <a>City</a>
+                </li>
+                <li>
+                    <a>
+                        @Html.TextBox("City", ViewBag.City as string)
+                    </a>
+                </li>
+
+                <li><input type="submit" value="search"></li>
+            }
+
+
+
+
+
+                @using (Html.BeginForm("Search", "Customers", FormMethod.Get))
+                {
+                    <li>
+                        <a>
+                            Search Birthdays
+                        </a>
+                    </li>
+                    <li>
+                        <a>firstName</a>
+                    </li>
+                        <li>
+                            <a>
+                                @Html.TextBox("firstName", ViewBag.firstName as string)
+                            </a>
+                        </li>
+                        <li>
+                            <a>city</a>
+                        </li>
+                        <li>
+                            <a>
+                                @Html.TextBox("city", ViewBag.city as string)
+                            </a>
+                        </li>
+                        <li>
+                            <a>birthday-mounth</a>
+                        </li>
+                        <li>
+                            <a>  @Html.TextBox("mounth", ViewBag.mounth as string) </a>
+                        </li>
+                        <li><input type="submit" value="search"></li>
+
+                }
+            }
+
+        </ul>
+    </div>
+</div>
+
+
+
+
+
+
+
+<!-- /#sidebar-wrapper -->
+<!-- Page Content -->
+<div class="col-md-3" id="page-content-wrapper">
+    <div class="container-fluid">
+        <div class="row">
+            <div>
+                <a class="btn btn-default" id="menu-toggle">Toggle Menu</a>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="~/js/site.js"></script>
+<script type="text/javascript" src="~/js/canvas.js"></script>
+<div class="move_cavnas">
+    <div class="mycanvas">
+        <canvas id="myCanvas" width="1000" height="110">
+            Your browser does not support the canvas element.
+        </canvas>
+    </div>
+</div>
+
+<script type="text/javascript" src="~/js/canvas.js"></script>
+<div class="move" style="overflow:hidden;">
+    <div>
+        <div id="fb-root"></div>
+        <script>
+            (function (d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s); js.id = id;
+                js.src = "//connect.facebook.net/he_IL/sdk.js#xfbml=1&version=v2.7&appId=1009544939144606";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));</script>
+        <div class="fb-comments" data-href="https://www.facebook.com/Store-Project-1738580313074560/" data-numposts="5"></div>
+    </div>
+    <div>
+
+        <video controls="controls">
+            @*http://clips.vorwaerts-gmbh.de/VfE_html5.mp4*@
+            <source src="~/videos/6 Tips for Growing Great Flowers.mp4" type="video/mp4" />
+            Please download Chrome or any other update browser
+        </video>
+</div>
+    </div>
+<div id="three_col">
+    <div class="move_map">
+       
+    </div>
+   
+
+</div>
+<div id="six_col">
+    <p>
+        <marquee behavior="scroll" direction="down" scrollamount="2" height="50" width="350">Hours Of Fun</marquee>
+        <marquee behavior="scroll" direction="down" scrollamount="2" height="50" width="350">by dvir & shahar & chen</marquee>
+    </p> 
+    <h1 style="font-family: Arial, Verdana, Helvetica, sans-serif; font-size: 11px; color: rgb(102, 102, 102); text-decoration: none;"><a href="https://www.ftd.com/" title="Flowers" style="color: rgb(102, 102, 102); text-decoration: none;">Flowers</a> and <a href="https://www.ftd.com/all-plants-ctg/product-plants-all-bestsellers" title="Plants" style="color: rgb(102, 102, 102); text-decoration: none;">Plants</a></h1>
+
+
+    <p>Celebrate any occasion with fresh flowers from FTD. Here, you will find only the highest quality flower arrangements and floral bouquets - perfect for birthdays, anniversaries, or any holiday throughout the year. Better yet, FTD flower delivery is always fast, easy, and convenient, ready to serve you 24 hours a day and 7 days a week. Your gift will be hand-delivered by one of our professional FTD florists, to ensure a timely arrival and an impeccable experience for your recipient.</p>
+
+    <p>Send flowers from FTD, and feel confident that you’re making your recipient happy. You can trust that the quality will be without peer, whether you’ve ordered a bouquet of beautiful <a style="color: rgb(102, 102, 102); text-decoration: none;" href="https://www.ftd.com/roses-ctg/product-roses" title="Roses">roses</a>, vibrant <a style="color: rgb(102, 102, 102); text-decoration: none;" href="https://www.ftd.com/tulips-ctg/product-tulips" title="Tulips">tulips</a>, impressive <a style="color: rgb(102, 102, 102); text-decoration: none;" href="https://www.ftd.com/lilies-ctg/product-flowers-subtypes-lily" title="Lilies">lilies</a>, or lovely <a style="color: rgb(102, 102, 102); text-decoration: none;" href="https://www.ftd.com/daisies-ctg/product-flowers-subtypes-gerberdaisy" title="Gerbera Daisies">Gerbera daisies</a>.</p>
+
+
+    <h2 style="font-family: Arial, Verdana, Helvetica, sans-serif; font-size: 11px; color: rgb(102, 102, 102); text-decoration: none; font-weight: bold;"><a style="color: rgb(102, 102, 102); text-decoration: none;" href="https://www.ftd.com/summer-flowers-ctg/product-summer-flowers" title="Summer Flowers">Summer Flowers</a> and Gifts</h2>
+
+    <p>At FTD, we offer beautiful blooms and fresh flowers that reflect the joy of summer. Celebrate summer weddings with calla lilies; bring a bouquet of bright yellow roses as a perfect present for the host or hostess of a social gathering; and try Gerbera daisies to beautifully convey seasonal birthday wishes.</p>
+
+    <p>There are many summer occasions worth celebrating, and we are happy to provide the right gift for each of them. Personalized <a style="color: rgb(102, 102, 102); text-decoration: none;" href="https://www.ftd.com/fathers-day-ctg/occasion-fathersday" title="Father's Day gifts">Father's Day gifts</a>, <a style="color: rgb(102, 102, 102); text-decoration: none;" href="https://www.ftd.com/fourth-of-july-7-4-ctg/product-patrioticgifts" title="patriotic gifts">patriotic gifts</a> and arrangements for the 4th of July, spa gift baskets for the perfect summer vacation - all of these and more are available right here from FTD.</p>
+
+    <h2 style="font-family: Arial, Verdana, Helvetica, sans-serif; font-size: 11px; color: rgb(102, 102, 102); text-decoration: none; font-weight: bold;"><a style="color: rgb(102, 102, 102); text-decoration: none;" href="https://www.ftd.com/all-florist-designed-ctg/product-samedaydelivery-bestsellers" title="Same Day Flower Delivery">Same Day Flower Delivery</a></h2>
+
+    <p>When waiting is not an option, you can get flowers delivered same day from an artisan FTD florist. Order by 2 P.M. in your recipient’s time zone for same day flower delivery, Monday through Friday.</p>
+
+    <p>FTD believes having flowers delivered never needs to be a hassle, no matter where your recipient is. We make it easy for you to check product availability by delivery date and zip code, so whether you’re in New York, Chicago, Los Angeles, or anywhere in between, you can order flowers online and get them into your recipient’s hands today!</p>
+
+   
+
+   
+</div>
+
+
+
+

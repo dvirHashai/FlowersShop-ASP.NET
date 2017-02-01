@@ -1,0 +1,495 @@
+﻿
+
+/* Wrapping element */
+/* Set some basic padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+body, input {
+    font-family: 'Open Sans';
+    background-color: #d1d2d2;
+}
+/* Set widths on the form inputs since otherwise they're 100% wide */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+/* Carousel */
+.carousel-caption {
+    z-index: 10 !important;
+}
+
+    .carousel-caption p {
+        font-size: 20px;
+        line-height: 1.4;
+    }
+
+@media (min-width: 768px) {
+    .carousel-caption {
+        z-index: 10 !important;
+    }
+}
+
+.pic-item {
+    left: 250px;
+    max-height: 100%;
+    min-height: 0;
+    width: 50%;
+    height: 10%;
+}
+
+.carousel-control {
+    margin: 0;
+    padding: 0;
+}
+
+/*.navbar-custom {
+    background-image: linear-gradient(green,green);
+}*/
+
+
+footer {
+    background-color: #292c2f;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
+    width: 100%;
+    font: bold 16px sans-serif;
+    text-align: left;
+    /*padding: 50px 60px 40px;*/
+    padding: 0 0 0 0;
+    margin-top: 153px;
+    margin-bottom: 0;
+    overflow: hidden;
+    bottom: 0;
+}
+
+    /* Footer left */
+
+    footer .footer-left {
+        float: left;
+    }
+
+    /* The company logo */
+
+    footer h3 {
+        color: #ffffff;
+        font: normal 36px 'Cookie', cursive;
+        margin: 0 0 10px;
+    }
+
+        footer h3 span {
+            color: #5383d3;
+        }
+
+    /* Footer links */
+
+    footer .footer-links {
+        color: #ffffff;
+        margin: 0 0 10px;
+        padding: 0;
+    }
+
+        footer .footer-links a {
+            display: inline-block;
+            line-height: 1.8;
+            text-decoration: none;
+            color: inherit;
+        }
+
+    footer .footer-company-name {
+        color: #8f9296;
+        font-size: 14px;
+        font-weight: normal;
+        margin: 0;
+    }
+
+    /* Footer social icons */
+
+    footer .footer-icons {
+        margin-top: 40px;
+    }
+
+        footer .footer-icons a {
+            display: inline-block;
+            width: 35px;
+            height: 35px;
+            cursor: pointer;
+            background-color: #33383b;
+            border-radius: 2px;
+            font-size: 20px;
+            color: #ffffff;
+            text-align: center;
+            line-height: 35px;
+            margin-right: 3px;
+            margin-bottom: 5px;
+        }
+
+    /* Footer Right */
+
+    footer .footer-right {
+        float: right;
+    }
+
+        footer .footer-right p {
+            display: inline-block;
+            vertical-align: top;
+            margin: 15px 42px 0 0;
+            color: #ffffff;
+        }
+
+    /* The contact form */
+
+    footer form {
+        display: inline-block;
+    }
+
+        footer form input,
+        footer form textarea {
+            display: block;
+            border-radius: 3px;
+            box-sizing: border-box;
+            background-color: #1f2022;
+            box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.1);
+            border: none;
+            resize: none;
+            font: inherit;
+            font-size: 14px;
+            font-weight: normal;
+            color: #d1d2d2;
+            width: 400px;
+            padding: 18px;
+        }
+
+    footer ::-webkit-input-placeholder {
+        color: #5c666b;
+    }
+
+    footer ::-moz-placeholder {
+        color: #5c666b;
+        opacity: 1;
+    }
+
+    footer :-ms-input-placeholder {
+        color: #5c666b;
+    }
+
+
+    footer form input {
+        height: 55px;
+        margin-bottom: 15px;
+    }
+
+    footer form textarea {
+        height: 100px;
+        margin-bottom: 20px;
+    }
+
+    footer form button {
+        border-radius: 3px;
+        background-color: #33383b;
+        color: #ffffff;
+        border: 0;
+        padding: 15px 50px;
+        font-weight: bold;
+    }
+
+.wrapper {
+    min-height: 400px;
+    position: relative;
+}
+
+/* If you don't want the footer to be responsive, remove these media queries */
+
+@media (max-width: 1000px) {
+
+    footer {
+        font: bold 14px sans-serif;
+    }
+
+
+        footer .footer-company-name {
+            font-size: 12px;
+        }
+
+        footer form input,
+        footer form textarea {
+            width: 250px;
+        }
+
+        footer form button {
+            padding: 10px 35px;
+        }
+}
+
+@media (max-width: 800px) {
+
+    footer {
+        padding: 30px;
+    }
+
+        footer .footer-left,
+        footer .footer-right {
+            float: none;
+            max-width: 300px;
+            margin: 0 auto;
+        }
+
+        footer .footer-left {
+            margin-bottom: 40px;
+        }
+
+        footer form {
+            margin-top: 30px;
+        }
+
+        footer form {
+            display: block;
+        }
+
+            footer form button {
+                float: none;
+            }
+}
+
+.item {
+    border-radius: 25px;
+    display: inline-block;
+    vertical-align: top;
+    box-sizing: border-box;
+    width: 330px;
+    max-width: 100%;
+    padding: 175px 0 30px;
+    margin: 0 0 1em 1em;
+    position: relative;
+    text-align: center;
+    background-color: #fff;
+}
+
+#sidebar {
+    background: #2a2c36;
+    color: #eee;
+    height: 100%;
+    width: 250px;
+    overflow: hidden;
+    left: 0;
+    margin: 0;
+    -moz-transition: left ease .25s;
+    -o-transition: left ease .25s;
+    -webkit-transition: left ease .25s;
+    transition: left ease .25s;
+}
+
+.slider {
+    background-image: url(http://hasahlav.com/site/images/slideshow/sliders/banner/banner4.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    padding-top: 200px;
+    padding-bottom: 50px;
+    display: block;
+    margin-top: -20px;
+}
+
+#wrapper {
+    padding-left: 0;
+    bottom: 0;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+    #wrapper.toggled {
+        padding-left: 250px;
+    }
+
+#sidebar-wrapper {
+    z-index: 1000;
+    position: absolute;
+    left: 250px;
+    width: 0;
+    height: 100%;
+    margin-left: -250px;
+    overflow-y: auto;
+    background: #000;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    top: 251px;
+    height: 1123px;
+    bottom: 0;
+    /*display:none;*/
+}
+
+#wrapper.toggled #sidebar-wrapper {
+    width: 250px;
+}
+
+#page-content-wrapper {
+    width: 100%;
+    position: fixed;
+    padding: 15px;
+}
+
+#wrapper.toggled #page-content-wrapper {
+    position: absolute;
+    margin-right: -250px;
+}
+
+/* Sidebar Styles */
+
+.sidebar-nav {
+    position: center;
+    top: 0;
+    width: 250px;
+    margin: 0;
+    padding: 5px 4px 5px 6px;
+    list-style: none;
+}
+
+    .sidebar-nav li {
+        text-indent: 20px;
+        line-height: 40px;
+    }
+
+        .sidebar-nav li a {
+            display: block;
+            text-decoration: none;
+            color: #999999;
+        }
+
+            .sidebar-nav li a:hover {
+                text-decoration: none;
+                color: #fff;
+                background: rgba(255,255,255,0.2);
+            }
+
+            .sidebar-nav li a:active,
+            .sidebar-nav li a:focus {
+                text-decoration: none;
+            }
+
+    .sidebar-nav > .sidebar-brand {
+        height: 65px;
+        font-size: 18px;
+        line-height: 60px;
+    }
+
+        .sidebar-nav > .sidebar-brand a {
+            color: #999999;
+        }
+
+            .sidebar-nav > .sidebar-brand a:hover {
+                color: #fff;
+                background: none;
+            }
+
+@media(min-width:768px) {
+    #wrapper {
+        padding-left: 250px;
+    }
+
+        #wrapper.toggled {
+            padding-left: 0;
+        }
+
+    #sidebar-wrapper {
+        width: 250px;
+    }
+
+    #wrapper.toggled #sidebar-wrapper {
+        width: 0;
+    }
+
+    #page-content-wrapper {
+        padding: 20px;
+        position: relative;
+    }
+
+    #wrapper.toggled #page-content-wrapper {
+        position: relative;
+        margin-right: 0;
+    }
+
+    .item {
+        border-radius: 25px;
+        display: inline-block;
+        vertical-align: top;
+        box-sizing: border-box;
+        width: 330px;
+        max-width: 100%;
+        padding: 63px 0 30px;
+        margin: 0 0 1em 1em;
+        position: relative;
+        text-align: center;
+        background-color: #fff;
+    }
+
+    .footer, .push {
+        height: 155px; /* .push must be the same height as .footer */
+    }
+
+    .aside {
+        float: left;
+        max-width: 160px;
+        margin: 0;
+        padding: 1em;
+    }
+}
+
+#three_col {
+    -moz-column-count: 2 !important;
+    -webkit-column-count: 2 !important;
+    column-count: 2;
+    margin: -110px 0 0 24px;
+}
+
+#six_col {
+    -moz-column-count: 6 !important;
+    -webkit-column-count: 6 !important;
+    column-count: 6;
+    margin: 45px 0 0 266px;
+}
+
+#canvas {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+}
+
+video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 401px;
+    height: 320px;
+    margin: -82px 0 0 245px;
+    display: inline-block;
+    vertical-align: baseline;
+}
+
+#result {
+    background-color: #ffffff;
+}
+
+.move {
+    padding: 100px;
+    padding-left: 261px;
+    margin: 12px 0 0 7px;
+}
+
+.move_cavnas {
+    padding-left: 261px;
+}
+
+.move_map {
+    margin: 39px 0 0 243px;
+}

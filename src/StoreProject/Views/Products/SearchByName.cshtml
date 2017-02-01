@@ -1,0 +1,60 @@
+@model IEnumerable<StoreProject.Models.Product>
+
+@{
+    ViewData["Title"] = "SearchCategory";
+}
+
+<h2>SearchByName</h2>
+
+@if (User.IsInRole("Admin"))
+{
+    <div>
+        <a asp-action="Create">Create New</a>
+    </div>
+}
+<div class="container">
+    <div class="gallery">
+        <div class="row">
+
+            @foreach (var item in Model)
+            {
+
+                <div class="item">
+                    <div class="col-lg-pull-2">
+                        <a class="item-image" id="@item.ProductID" href="@Html.DisplayFor(modelItem => item.Picture)" target="_blank" data-item="b030a8ff" data-value="38.0">
+                            <a href="~/images/@Html.DisplayFor(modelItem=> item.Picture)" data-title="@Html.DisplayFor(modelItem=> item.Description)" data-lightbox="vcation">
+                                <img src="~/images/@item.Picture" alt="@Html.DisplayFor(modelItem => item.ProductName)" class="img-thumbnail" />
+                            </a>
+                        </a>
+                        <div class="item-title">@Html.DisplayFor(modelItem => item.ProductName)</div>
+                        <div class="item-description">@Html.DisplayFor(modelItem => item.Description)</div>
+                        <div class="item-price">
+                            Price: <span class="price">@Html.DisplayFor(modelItem => item.UnitPrice)</span> USD
+                        </div>
+                        @*<div> <a href="/Comments/Index/@item.ProductID">Comments</a></div>*@
+                        @if (User.IsInRole("Admin"))
+            {
+                <div>
+                    (<a href="/Products/Edit/@item.ProductID">Edit</a> |
+                    <a href="/Products/Details/@item.ProductID">Details</a> |
+                    <a href="/Products/Delete/@item.ProductID">Delete</a>)
+                </div>
+            }
+                @*<div>
+                        <a asp-action="Edit" asp-route-id="@item.ProductID">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.ProductID">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.ProductID">Delete</a>
+                    </div>*@
+                @*<a class="btn btn-danger" id="@item.ProductID" style="margin-top:7px;" href="@Html.DisplayFor(modelItem => item.ProductID)" target="_blank" data-item="b030a8ff" data-value="38.0">
+                        Buy via Paypal
+                    </a>*@
+
+            </div>
+        </div>
+            }
+
+
+        </div>
+    </div>
+
+    </div>

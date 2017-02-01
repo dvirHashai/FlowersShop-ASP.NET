@@ -1,0 +1,71 @@
+@model IEnumerable<StoreProject.Models.Product>
+
+@{
+    ViewData["Title"] = "InventoryChek";
+    var Inventory = (List<StoreProject.ViewModels.Home.InventoryCheck>)ViewData["InventoryList"];
+}
+
+<h2>InventoryCheck</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+@section scripts
+{
+   
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
+  
+
+    <script>
+        //var data = [10, 50, 80];
+        //var r = 300;
+
+        //var color = d3.scale.ordinal()
+        //.range(["red", "blue", "orange"]);
+
+        //var canvas = d3.select("body").append("svg")
+        //    .attr("width", 800)
+        //    .attr("height", 800);
+        //var group = canvas.append("g")
+        //    .attr("transform", "translate(300, 300)");
+
+
+        //var arc = d3.svg.arc()
+        //.innerRadius(200)
+        //.outerRadius(r);
+
+        //var pie = d3.layout.pie()
+        //.value(function (d) { return d; });
+        //var arcs = group.selectAll(".arc")
+        //.data(pie(data))
+        //.enter()
+        //.append("g")
+        //.attr("class", "arc");
+
+        //arcs.append("path")
+        //.attr("d", arc)
+        //.attr("fill", function (d) { return color(d.data); });
+
+        //arcs.append("text")
+        //.attr("transform", function (d) { return "translate(" + arc.centroid(d) + ")"; })
+        //.text(function (d) { return d.data; });
+
+
+
+        var barData = [
+            @foreach (var item in Inventory)
+            {
+
+                 <text> {
+                'x': 'Category: @item.category',
+                'y': @item.count
+                },</text>
+           }
+        ];
+    </script>
+    <script src="~/js/d3/chart-init.js"></script>
+    
+}
+
+<h3>D3 Chart - Inventory</h3>
+<svg id="visualisation" width="1000" height="500"></svg>
